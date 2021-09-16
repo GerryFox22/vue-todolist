@@ -4,9 +4,7 @@
 // l'item viene rimosso dalla lista. OK!
 
 // Predisporre un input per aggiungere un nuovo item alla lista: digitando il tasto invio 
-// oppure ciccando su un pulsante, il testo digitato sarà aggiunto alla lista.
-
-
+// oppure ciccando su un pulsante, il testo digitato sarà aggiunto alla lista. OK!
 
 
 
@@ -16,15 +14,25 @@ var app = new Vue({
 
     data: {
 
-        listaSpesa : ["Pasta", "Dentifricio", "Patatine", "Carta Igienica", "Pesto", "Sapone",],
+        listaSpesa : ["Pasta", "Dentifricio", "Patatine", "Carta Igienica", "Pesto",],
+
+        listaElementiComprati : [],
 
         elementoListaAggiunto : "",
     },  
 
     methods: {
 
-        eliminaElemento : function(index){
+
+        eliminaElemento : function(elemento ,index){
             this.listaSpesa.splice(index, 1);
+            this.listaElementiComprati.push(elemento);
+        },
+
+        elementoErrato : function(elemento, index){
+            this.listaElementiComprati.splice(index, 1);
+            this.listaSpesa.push(elemento)
+            
         },
 
         aggiungiElementoDellaSpesa : function() {

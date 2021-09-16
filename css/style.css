@@ -1,0 +1,73 @@
+
+h1 {
+    color: beige;
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+i {
+    cursor: pointer;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: black;
+    background-color: beige;
+    border-color: black;
+    border-radius: 50px;
+    margin: 15px;
+}
+
+.unchecked {
+    color: red;
+}
+
+.checked {
+    color: green;
+}
+
+.unchecked-list{
+    border-radius: 50px;
+    border: 1px solid beige;
+    background-color: red;
+}
+
+.title{
+    color: beige;
+}
+
+.checked-list{
+    border: 1px solid beige;
+    border-radius: 50px;
+    background-color: green;
+}
+
+.container-bg {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.beige-bg{
+    padding: 10px;
+    background-color: beige;
+    width: 50%;
+    text-align: center;
+}
+
+.beige-btn{
+    background-color: beige;
+    color: black;
+    border: beige;
+    border-radius: 50px;
+    padding: 10px 25px;
+}
+
+.beige-btn:hover{
+    background-color:#e2e24b;
+}
+
+i:hover{
+    font-size: large;
+}

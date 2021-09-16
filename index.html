@@ -20,31 +20,55 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app" class="container">
+    <div id="app" class="container container-bg pb-5">
 
-        <div class="row">
+        <div class="row text-center mb-3">
             <div class="col-12">
                 <h1>Lista della Spesa</h1>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row text-center mb-3">
             <div class="col-12">
-                <input @keyup.enter="aggiungiElementoDellaSpesa" type="text" placeholder="Aggiungi qualcosa da comprare" v-model="elementoListaAggiunto">
-                <button @click="aggiungiElementoDellaSpesa">Aggiungi alla lista!</button>
+                <input class="beige-bg" @keyup.enter="aggiungiElementoDellaSpesa" type="text" placeholder="Aggiungi qualcosa da comprare" v-model="elementoListaAggiunto">
             </div>
         </div>
 
-        <div class="row">
+        <div class="row text-center mb-5">
             <div class="col-12">
-                <ul>
-                    <li v-for="(elemento, index) in listaSpesa">
-                        {{ elemento }}
-                        <i class="far fa-times-circle" @click="eliminaElemento(index)"></i>
-                    </li>
-                </ul>
+                <button type="button" class="beige-btn" @click="aggiungiElementoDellaSpesa">Aggiungi alla lista!</button>
             </div>
         </div>
+
+        <div class="row text-center justify-content-evenly">
+            <div class="col-5 pt-5 pb-5 unchecked-list">
+                <h2 class="title mb-4">Prodotti da comprare</h2>
+
+                <ul class="list-group">
+                    <li class="list-group-item active" v-for="(elemento, index) in listaSpesa" aria-current="true">
+                        {{ elemento }}
+                        <i class="far fa-times-circle unchecked" @click="eliminaElemento(elemento,index)"></i>
+                    </li>
+     
+                </ul>
+
+            </div>
+
+            <div class="col-5 pt-5 pb-5 checked-list">
+                <h2 class="title mb-4">Prodotti comprati</h2>
+
+                <ul class="list-group">
+                    <li class="list-group-item active" v-for="(elemento, index) in listaElementiComprati" aria-current="true">
+                        {{ elemento }}
+                        <i class="far fa-check-circle checked"  @click="elementoErrato(elemento, index)"></i>
+                    </li>
+     
+                </ul>
+
+            </div>
+        </div>
+
+        
 
     </div>
 
