@@ -27,6 +27,14 @@ var app = new Vue({
             this.listaSpesa.splice(index, 1);
         },
 
+        aggiungiElementoDellaSpesa : function() {
+            if(this.elementoListaAggiunto.trim().length > 0) {
+                this.listaSpesa.push(this.elementoListaAggiunto.trim());
+                this.elementoListaAggiunto = ""
+            }
+            
+        },
+
     },
   });
   

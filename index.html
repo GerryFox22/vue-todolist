@@ -30,8 +30,8 @@
 
         <div class="row">
             <div class="col-12">
-                <input type="text" placeholder="Aggiungi qualcosa da comprare" v-model="elementoListaAggiunto">
-                <button>Aggiungi alla lista!</button>
+                <input :keyup.enter="aggiungiElementoDellaSpesa" type="text" placeholder="Aggiungi qualcosa da comprare" v-model="elementoListaAggiunto">
+                <button @click="aggiungiElementoDellaSpesa">Aggiungi alla lista!</button>
             </div>
         </div>
 
